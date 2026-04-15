@@ -37,3 +37,14 @@ Aplicativo web mobile-first para controle de despesas, rateio por quilometragem 
 - gráficos
 - aviso automático de vencimento
 - abastecimento com litros reais e preço por litro
+
+
+## Atualização v2
+Se o seu banco já estava criado e o sistema já estava rodando, execute também o arquivo `supabase/migration_v2.sql` no SQL Editor do Supabase antes de publicar esta versão.
+
+Esta versão adiciona:
+- registro e exibição de data/hora nos usos
+- forma de pagamento no lançamento de despesas
+- nome do titular do cartão
+- cadastro de categorias de despesas
+- recorrência com frequência, dia e quantidade de parcelas
