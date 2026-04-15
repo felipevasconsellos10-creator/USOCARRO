@@ -1,16 +1,14 @@
 export type UsuarioUso = 'FELIPE' | 'EVERTON';
 export type TipoDespesa = 'FIXA' | 'VARIAVEL';
-export type CategoriaDespesa =
-  | 'FINANCIAMENTO'
-  | 'IPVA'
-  | 'LICENCIAMENTO'
-  | 'SEGURO'
-  | 'MANUTENCAO'
-  | 'OLEO'
-  | 'PNEU'
-  | 'COMBUSTIVEL'
-  | 'LAVAGEM'
-  | 'OUTROS';
+export type FormaPagamento = 'A_VISTA' | 'CARTAO' | 'BOLETO' | 'PIX' | 'TRANSFERENCIA';
+export type TipoRecorrencia = 'SEM_RECORRENCIA' | 'SEMANAL' | 'QUINZENAL' | 'MENSAL' | 'ANUAL';
+
+export type ExpenseCategory = {
+  id: string;
+  nome: string;
+  ativo: boolean;
+  created_at: string;
+};
 
 export type Vehicle = {
   id: string;
@@ -27,9 +25,13 @@ export type Vehicle = {
 export type ExpenseTemplate = {
   id: string;
   descricao: string;
-  categoria: CategoriaDespesa;
+  categoria: string;
+  categoria_id: string | null;
   tipo_despesa: TipoDespesa;
   recorrente: boolean;
+  tipo_recorrencia: TipoRecorrencia;
+  dia_recorrencia: number | null;
+  quantidade_parcelas: number | null;
   observacao: string | null;
   created_at: string;
 };
@@ -39,12 +41,20 @@ export type Expense = {
   veiculo_id: string;
   modelo_despesa_id: string | null;
   descricao: string;
-  categoria: CategoriaDespesa;
+  categoria: string;
+  categoria_id: string | null;
   tipo_despesa: TipoDespesa;
   valor: number;
   data_despesa: string;
   vencimento: string | null;
   pago: boolean;
+  forma_pagamento: FormaPagamento;
+  cartao_titular: string | null;
+  recorrente: boolean;
+  tipo_recorrencia: TipoRecorrencia;
+  dia_recorrencia: number | null;
+  quantidade_parcelas: number | null;
+  parcela_atual: number | null;
   observacao: string | null;
   created_at: string;
 };
