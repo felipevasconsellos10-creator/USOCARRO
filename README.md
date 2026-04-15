@@ -47,4 +47,4 @@ Esta versão adiciona:
 - forma de pagamento no lançamento de despesas
 - nome do titular do cartão
 - cadastro de categorias de despesas
-- recorrência com frequência, dia e quantidade de parcelas
+- recorrência com frequência, dia e quantidade de parcelas.
